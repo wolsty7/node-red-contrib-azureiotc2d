@@ -1,7 +1,7 @@
 {
     "name"         : "node-red-contrib-azureiotc2d",
     "version"      : "0.0.7",
-    "description"  : "node to send Azure IoT C2D",
+    "description"  : "node to send Azure IoT C2D"
 	},
    "dependencies": {
     "azure-iothub": "1.1.10",
