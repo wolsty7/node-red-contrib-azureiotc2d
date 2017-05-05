@@ -16,7 +16,7 @@
     "keywords": [ "node-red" ],
     "node-red"     : {
         "nodes": {
-            "azureiotc2d": "azureiotc2d.js"
+            "azureiotc2d": "azureiotc2d/azureiotc2d.js"
         }
     }	
 }
