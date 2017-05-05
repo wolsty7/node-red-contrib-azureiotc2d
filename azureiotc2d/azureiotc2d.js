@@ -8,7 +8,7 @@
 	var Client = require('azure-iothub').Client;
 	var Message = require('azure-iot-common').Message;
 
-	var serviceClient = Client.fromConnectionString(connectionString);
+	//var serviceClient = Client.fromConnectionString(connectionString);
 	
 	/* Node for configuring Azure IoT  */
 	
