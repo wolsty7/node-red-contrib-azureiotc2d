@@ -1,9 +1,8 @@
 {
     "name"         : "node-red-contrib-azureiotc2d",
     "version"      : "0.0.7",
-    "description"  : "node to send Azure IoT C2D"
-	},
-   "dependencies": {
+    "description"  : "node to send Azure IoT C2D",
+	"dependencies": {
     "azure-iothub": "1.1.10",
     "azure-iot-common": "1.1.7"
    },   
@@ -12,9 +11,9 @@
     "url": "https://github.com/dtabuencav/node-red-contrib-azureiotc2d.git"
   },
     "keywords": [ "node-red" ],
-    "node-red"     : {
+    "node-red"  : {
         "nodes": {
-            "azureiotc2d": "azureiotc2d.js"
+            "azureiotc2d": "azureiotc2d/azureiotc2d.js"
         }
     }	
 }
