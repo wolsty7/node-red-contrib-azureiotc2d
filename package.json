@@ -9,10 +9,10 @@
     "keywords": [ "node-red" ],
     "node-red"     : {
         "nodes": {
-            "sample": "azureiotc2d.js"
+            "azureiotc2d": "azureiotc2d.js"
         }
     }
 	"author": {
     "name": "Daniel Tabuenca"
-  },
+  }
 }
