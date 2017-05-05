@@ -11,8 +11,8 @@
         "nodes": {
             "azureiotc2d": "azureiotc2d.js"
         }
-    }
+    },
 	"author": {
     "name": "Daniel Tabuenca"
-  }
+  },
 }
