@@ -1,0 +1,66 @@
+<script type="text/x-red" data-template-name="azureiotc2d">
+	<div class="form-row">
+        <label for="node-input-endpoint"><i class="icon-tasks"></i>Connection String</label>
+        <input type="text" id="node-input-endpoint">
+    </div>
+	<div class="form-row">
+        <label for="node-input-deviceid"><i class="icon-tag"></i> DeviceId</label>
+        <input type="text" id="node-input-deviceid" placeholder="deviceid">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="azureiotc2d">
+    <p>Azure IoT Hub node for sending message to a device</p>
+</script>
+
+<script type="text/javascript">
+	RED.nodes.registerType('azureiotc2d', {
+		category: "cloud",
+		color: "#00abec",
+		defaults: {
+            endpoint: {type : "iothub-endpoint", required:true},
+            deviceid: {value: "", required: true},
+			name: {value: ""}
+			
+        },
+		inputs:1,
+        outputs:0,
+        icon: "azureiothub.png",
+		label: function() {
+            return this.name||"azureiotc2d";
+        },
+		align: "right"
+	});
+</script>
+
+<script type="text/x-red" data-template-name="iothub-endpoint">
+	<div class="form-row">
+        <label for="node-config-input-connString"><i class="icon-tasks"></i>Connection String</label>
+        <input type="text" id="node-config-input-connString" placeholder="connString">
+    </div>
+	<div class="form-row">
+        <label for="node-config-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-config-input-name" placeholder="name">
+    </div>
+</script>
+
+<script type="text/javascript">
+	RED.nodes.registerType('iothub-endpoint', {
+		category: 'config',
+		defaults: {
+            connString: {value: "", required: true},
+        	name: {value: ""}
+        },
+        label: function() {
+            return this.name||"iothub";
+        }
+	});
+</script>
+
+
+

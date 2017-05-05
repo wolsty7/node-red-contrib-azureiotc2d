@@ -1,0 +1,18 @@
+{
+    "name"         : "node-red-contrib-azureiotc2d",
+    "version"      : "0.0.1",
+    "description"  : "node to send Azure IoT C2D",
+   "dependencies": {
+    "azure-iothub": "1.1.10",
+    "azure-iot-common": "1.1.10",
+   },
+    "keywords": [ "node-red" ],
+    "node-red"     : {
+        "nodes": {
+            "sample": "azureiotc2d.js"
+        }
+    }
+	"author": {
+    "name": "Daniel Tabuenca"
+  },
+}
