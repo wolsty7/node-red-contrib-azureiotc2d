@@ -3,7 +3,7 @@
     "version"      : "0.0.9",
     "description"  : "node to send Azure IoT C2D",
 	"author": {
-		"name": "Daniel Tabuenca",
+		"name": "Daniel Tabuenca Velasco"
     },
 	"dependencies": {
     "azure-iothub": "1.1.10",
