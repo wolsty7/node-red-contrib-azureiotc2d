@@ -1,6 +1,6 @@
 {
     "name"         : "node-red-contrib-azureiotc2d",
-    "version"      : "0.0.8",
+    "version"      : "0.0.9",
     "description"  : "node to send Azure IoT C2D",
 	"author": {
 		"name": "Daniel Tabuenca",
