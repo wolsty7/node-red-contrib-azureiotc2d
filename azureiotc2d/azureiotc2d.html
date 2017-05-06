@@ -15,7 +15,26 @@
 </script>
 
 <script type="text/x-red" data-help-name="azureiotc2d">
-    <p>Azure IoT Hub node for sending message to a device</p>
+<p>Send a Cloud to Device message</p>
+
+<h3>Inputs</h3>
+    <dl class="message-properties">
+        <dt>payload
+           
+        </dt>
+        <dd> the payload of the message to send </dd>
+        <dt class="optional">deviceid</dt>
+        <dd> the deviceid to send message to</dd>
+    </dl>
+
+ 
+
+<h3>Details</h3>
+    <p><code>msg.payload</code> is used as the payload of the sent message.
+    </p>
+    <p>The deviceid used can be configured in the node or, if left blank, can be set
+    by <code>msg.deviceid</code>.</p>
+
 </script>
 
 <script type="text/javascript">

@@ -1,6 +1,8 @@
 # azureiotc2d 
-*detailed instructions to come!
-Node to send Azure IoT C2D messages
+Azure IoT Hub - Send a Cloud to Device message
 
-This is a node-red node to send Cloud to Device messages from a node-red flow.
-The content of ´{msg.payload} will be sent to the device specified in the node.
+Inputs
+
+msg.payload is used as the payload of the sent message.
+
+The deviceid used can be configured in the node or, if left blank, can be set by msg.deviceid.

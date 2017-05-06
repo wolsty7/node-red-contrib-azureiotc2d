@@ -8,7 +8,7 @@
 	var Client = require('azure-iothub').Client;
 	var Message = require('azure-iot-common').Message;
 
-	//var serviceClient = Client.fromConnectionString(connectionString);
+	var serviceClient = null;
 	
 	/* Node for configuring Azure IoT  */
 	
@@ -38,48 +38,64 @@
 		
 		if (node.endpointConfig) {
 			
-			node.deviceid = n.deviceid;
 			
+			node.deviceid = n.deviceid;
+						
 			
 			
 		} else {
 			console.log("Missing Endpoint");
 		}
 		
-		this.status({fill:"red",shape:"ring",text:"waiting"});
+		
+		
+		this.status({fill:"blue",shape:"ring",text:"waiting"});
 		
 		node.on("input", function(msg) {
-
-		 if (serviceClient){
-			 console.log(serviceClient);
-			 
+		
+		if (serviceClient){
 				serviceClient.removeAllListeners();
 				serviceClient.close(printResultFor('close'));
-                //serviceClient = null;
-			 
-		 }
+				serviceClient = null;
+		}
+				 
+
 		
 		var serviceClient = Client.fromConnectionString(this.endpointConfig.connString);
+		if (msg.deviceid != null){
+				node.deviceid = msg.deviceid;
+		}
 		
 		serviceClient.open(function (err) {
-		if (err) {
-			console.error('Could not connect: ' + err.message);
-		} else {
-		 console.log('Service client connected');
-		 serviceClient.getFeedbackReceiver(receiveFeedback);
-		 var message = new Message('Cloud to device message.');
-		 message.ack = 'full';
-		 console.log('Sending message: ' + msg.payload);
-		 node.status({fill:"red",shape:"ring",text:"sending"});
-		serviceClient.send(node.deviceid, msg.payload, printResultFor('send'));
-
-   }
- });
+			if (err) {
+				console.error('Could not connect: ' + err.message);
+			} else {
+				
+				serviceClient.getFeedbackReceiver(receiveFeedback);
+				var message = new Message('Cloud to device message.');
+				message.ack = 'full';
+				msg.ack = 'full';
+				 
+				console.log('Sending message: ' + msg.payload);
+				
+				node.status({fill:"red",shape:"ring",text:"sending"});
+				serviceClient.send(node.deviceid, msg.payload, printResultFor('send'));
+				node.status({fill:"red",shape:"ring",text:"sent"});
+			}
+		});
+	
+ 
+ 
+ 
+ 
 	});
 	
 	this.on('close', function() {
-   
-	serviceClient.close(printResultFor('close'));
+		if (serviceClient){
+				serviceClient.removeAllListeners();
+				serviceClient.close(printResultFor('close'));
+				serviceClient = null;
+		}
 });
 			
 	};
