@@ -1,3 +1,4 @@
+NOTE: this is a development version use the original version by dtabuencav
 # azureiotc2d 
 Azure IoT Hub - Send a Cloud to Device message
 
